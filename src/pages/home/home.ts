@@ -22,7 +22,8 @@ export class Home {
     productVolume:string = ''
     productQuantity:number = null;
     paidAmount:number = null;
-    storeData:any ={};
+    storeData:any = {};
+    sellsRecord:any = [];
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
             private local: LocalService) {
@@ -43,7 +44,10 @@ export class Home {
   }
 
   showData(){
-      this.local.selectData();
+      this.local.selectData().then((entries)=>{
+          this.sellsRecord = entries;
+
+      })
   }
 
   clearData(){

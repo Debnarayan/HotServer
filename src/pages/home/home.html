@@ -56,4 +56,21 @@
     <div text-center>
         <button ion-button block (click)="clearData()">CLEAR</button>
     </div>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>NAME</ion-col>
+            <ion-col>BRAND</ion-col>
+            <ion-col>SIZE</ion-col>
+            <ion-col>QTY</ion-col>
+            <ion-col>AMOUNT</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let item of sellsRecord">
+            <ion-col>{{item.name}}</ion-col>
+            <ion-col>{{item.brand}}</ion-col>
+            <ion-col>{{item.size}}</ion-col>
+            <ion-col>{{item.quantity}}</ion-col>
+            <ion-col>{{item.amount}}</ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
